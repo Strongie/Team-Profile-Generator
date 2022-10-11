@@ -58,7 +58,7 @@ describe('Employee', () => {
             const checkEmployee = new Employee(name, id, email);
           
             // Assert
-            expect(checkEmployee.getRole()).toEqual(id);
+            expect(checkEmployee.getRole()).toEqual(role);
               });  
           });
      

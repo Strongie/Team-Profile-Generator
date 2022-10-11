@@ -8,56 +8,91 @@ describe('Engineer', () => {
     const id = '2'
     const email = 'john@email.com'
     const role = 'Manager'
+    const github = 'strongie'
   
     // Act
-    const checkEmployee = new Employee(name, id, email);
+    const checkEngineer = new Engineer(name, id, email, github);
   
     // Assert
-    expect(checkEmployee.getName()).toEqual(name);
+    expect(checkEngineer.getName()).toEqual(name);
       });
   
      
-    it("should provide the employee id when requested ", () => {
+    it("should provide the engineer id when requested ", () => {
         // Arrange
-    const name = 'John';
-    const id = '2'
-    const email = 'john@email.com'
-    const role = 'Manager'
+        const name = 'John';
+        const id = '2'
+        const email = 'john@email.com'
+        const role = 'Manager'
+        const github = 'strongie'
   
     // Act
-    const checkEmployee = new Employee(name, id, email);
+    const checkEngineer = new Engineer(name, id, email, github);
   
     // Assert
-    expect(checkEmployee.getID()).toEqual(id);
+    expect(checkEngineer.getID()).toEqual(id);
       });
 
-    it("should return the employee email when requested", () => {
+    it("should return the engineer email when requested", () => {
     
         // Arrange
         const name = 'John';
         const id = '2'
         const email = 'john@email.com'
         const role = 'Manager'
-      
+        const github = 'strongie'
         // Act
-        const checkEmployee = new Employee(name, id, email);
+        const checkEngineer = new Engineer(name, id, email, github);
       
         // Assert
-        expect(checkEmployee.getEmail()).toEqual(email);
+        expect(checkEngineer.getEmail()).toEqual(email);
           });
       
          
-        it("should provide the employee role when requested ", () => {
+        it("should provide the engineer role when requested ", () => {
             // Arrange
-        const name = 'John';
-        const id = '2'
-        const email = 'john@email.com'
-        const role = 'Manager'
+            const name = 'John';
+            const id = '2'
+            const email = 'john@email.com'
+            const role = 'Manager'
+            const github = 'strongie'
       
         // Act
-        const checkEmployee = new Employee(name, id, email);
+        const checkEngineer = new Engineer(name, id, email, github);
       
         // Assert
-        expect(checkEmployee.getRole()).toEqual(id);
-          });  
+        expect(checkEngineer.getRole()).toEqual(role);
+          }); 
+          
+          it("should provide the email", () => {
+            // Arrange
+            const name = 'John';
+            const id = '2'
+            const email = 'john@email.com'
+            const role = 'Manager'
+            const github = 'strongie'
+      
+        // Act
+        const checkEngineer = new Engineer(name, id, email, github);
+      
+        // Assert
+        expect(checkEngineer.getEmail()).toEqual(email);
+          });      
+       
+       it("should provide the github username", () => {
+            // Arrange
+            const name = 'John';
+            const id = '2'
+            const email = 'john@email.com'
+            const role = 'Manager'
+            const github = 'strongie'
+      
+        // Act
+        const checkEngineer = new Engineer(name, id, email, github);
+      
+        // Assert
+        expect(ccheckEngineer.getGithub()).toEqual(github);
+          });
+
+
       });

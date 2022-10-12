@@ -6,21 +6,22 @@ const Manager = require("./lib/Intern.js");
 const Manager = require("./lib/Employee.js");
 const Manager = require("./lib/Engineer.js");
 
-inquirer
-  .prompt([
+function manager(){
+
+  inquirer.prompt([
     {
       type: 'input',
       name: 'name',
-      message: 'What is your team managers name?',
+      message: "What is the team manager's name?",
     },
     {
       type: 'input',
-      message: 'What is the id?',
+      message: "What is the manager's id?",
       name: 'id',
     },
     {
       type: 'input',
-      message: 'What is your email address?',
+      message: "What is the manager's email address?",
       name: 'email',
     },
   ])
@@ -31,6 +32,76 @@ inquirer
       err ? console.log(err) : console.log('Success !')
     );
   });
+
+}
+  function engineer(){
+    inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: "What is the engineer's name?",
+      },
+      {
+        type: 'input',
+        message: "What is the engineer's id?",
+        name: 'id',
+      },
+      
+      {
+        type: 'input',
+        message: "What is the engineer's email address?",
+        name: 'email',
+      },
+
+      {
+        type: 'input',
+        message: "What is the engineer's github username?",
+        name: 'github',
+      },
+    ])
+    .then((data) => {
+      const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+      const html = generateHTML(data);
+      fs.writeFile("index.html", html, (err) =>
+        err ? console.log(err) : console.log('Success !')
+      );
+    });
+
+  }
+  function intern(){
+    inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: "What is the intern's name?",
+      },
+      {
+        type: 'input',
+        message: "What is the intern's id?",
+        name: 'id',
+      },
+      {
+        type: 'input',
+        message: "What is the intern's email address?",
+        name: 'email',
+      },
+
+      {
+        type: 'input',
+        message: "What is the intern's school?",
+        name: 'school',
+      },
+    ])
+    .then((data) => {
+      const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+      const html = generateHTML(data);
+      fs.writeFile("index.html", html, (err) =>
+        err ? console.log(err) : console.log('Success !')
+      );
+    });
+
+  }
+
 
   function generateHTML(data){
     return `<!DOCTYPE html>

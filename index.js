@@ -6,6 +6,35 @@ const Manager = require("./lib/Intern.js");
 const Manager = require("./lib/Employee.js");
 const Manager = require("./lib/Engineer.js");
 
+
+function newTeam(){
+    inquirer.prompt([
+      {
+        type: 'list',
+        name: "newEmployee",
+        message: "What is the new employees's role?",
+        choices: ["Manager", "Engineer", "Intern", "No new team members"]
+      }
+  ])
+  .then((data) => {
+    switch(data.newEmployee){
+      case "Manager":
+        manager()
+      break;
+      case "Engineer":
+        engineer()  
+      break;
+      case "Intern":
+        intern()
+      break;
+      case "No new team members"
+      
+      break;
+
+    }
+  });
+}
+
 function manager(){
 
   inquirer.prompt([

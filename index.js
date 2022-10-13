@@ -28,7 +28,7 @@ function newTeam(){
         intern()
       break;
       default:
-        console.log("switch worked");
+        console.log("Team Complete");
 
     }
   });
@@ -59,7 +59,9 @@ function manager(){
       fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Success!')
       );
+      newTeam();
     });
+    
 
 }
   function engineer(){
@@ -93,7 +95,9 @@ function manager(){
       fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Success!')
       );
+      newTeam();
     });
+    
 
   }
   function intern(){
@@ -126,7 +130,9 @@ function manager(){
       fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Success!')
       );
+      newTeam();
     });
+    
 
   }
 

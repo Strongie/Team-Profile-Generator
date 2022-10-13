@@ -5,7 +5,7 @@ const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
 const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
-
+const card = require("./dist/card.js");
 
 function newTeam(){
     inquirer.prompt([
@@ -55,7 +55,7 @@ function manager(){
   ])
   .then((data) => {
        const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
-      
+
       fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Success!')
       );
@@ -124,17 +124,17 @@ function manager(){
         name: 'school',
       },
     ])
-    .then((data) => {
-      const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+    .then((answers) => {
+      const htmlPageContent = generateIntern(answers);
   
-      fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-        err ? console.log(err) : console.log('Success!')
+      fs.writeFile('index.html', htmlPageContent, (err) =>
+        err ? console.log(err) : console.log('Successfully created index.html!')
       );
       newTeam();
+
     });
     
-
-  }
+    }
 
 
 //   function generateHTML(data){

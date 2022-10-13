@@ -1,6 +1,6 @@
 
-const generateManager = ({ name, id, email, officeNumber }) =>
-  `<div class="card">
+function generateManager ({ name, id, email, officeNumber }){
+ return `<div class="card">
   <h2>${manager.getName()}</h2>
   <h3>${manger.getRole()}</h3>
   <ul>
@@ -9,10 +9,11 @@ const generateManager = ({ name, id, email, officeNumber }) =>
       <li>office number:${manager.getNumber()}</li>
 
   </ul>
-</div>`;
+</div>`
+};
 
-const generateEngineer = ({ name, id, email, username }) =>
-  `<div class="card">
+function generateEngineer ({ name, id, email, username }){
+ return `<div class="card">
   <h2>${engineer.getName()}</h2>
   <h3>${engineer.getRole()}</h3>
   <ul>
@@ -21,10 +22,11 @@ const generateEngineer = ({ name, id, email, username }) =>
       <li><a href="http://${engineer.getGithub()}">${engineer.getGithub()}</a></li>
 
   </ul>
-</div>`;
+</div>`
+};
 
-const generateIntern = ({ name, id, email, school }) =>
-  `<div class="card">
+function generateIntern ({ name, id, email, school }){
+ return `<div class="card">
   <h2>${intern.getName()}</h2>
   <h3>${intern.getRole()}</h3>
   <ul>
@@ -33,4 +35,5 @@ const generateIntern = ({ name, id, email, school }) =>
       <li>School: ${intern.getSchool()}</li>
 
   </ul>
-</div>`;
+</div>`
+};

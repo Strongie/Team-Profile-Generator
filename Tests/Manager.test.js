@@ -1,4 +1,4 @@
-const Manager = require("./lib/Manager.js");
+const Manager = require("../lib/Manager.js");
 
 describe('Manager', () => {
     it("should return the manager name", () => {
@@ -8,10 +8,10 @@ describe('Manager', () => {
     const id = '2'
     const email = 'john@email.com'
     const role = 'Manager'
-    const officeNumber = 'officenumber'
+    const officenumber = 'officenumber'
   
     // Act
-    const checkManager = new Manager(name, id, email, officeNumber);
+    const checkManager = new Manager(name, id, email, officenumber);
   
     // Assert
     expect(checkManager.getName()).toEqual(name);
@@ -24,10 +24,10 @@ describe('Manager', () => {
         const id = '2'
         const email = 'john@email.com'
         const role = 'Manager'
-        const officeNumber = 'officenumber'
+        const officenumber = 'officenumber'
   
     // Act
-    const checkManager = new Manager(name, id, email, officeNumber);
+    const checkManager = new Manager(name, id, email, officenumber);
   
     // Assert
     expect(checkManager.getID()).toEqual(id);
@@ -40,10 +40,10 @@ describe('Manager', () => {
         const id = '2'
         const email = 'john@email.com'
         const role = 'Manager'
-        const officeNumber = 'officenumber'
+        const officenumber = 'officenumber'
       
         // Act
-        const checkManager = new Manager(name, id, email, officeNumber);
+        const checkManager = new Manager(name, id, email, officenumber);
       
         // Assert
         expect(checkManager.getEmail()).toEqual(email);
@@ -56,10 +56,10 @@ describe('Manager', () => {
             const id = '2'
             const email = 'john@email.com'
             const role = 'Manager'
-            const officeNumber = 'officenumber'
+            const officenumber = 'officenumber'
       
         // Act
-        const checkManager = new Manager(name, id, email, officeNumber);
+        const checkManager = new Manager(name, id, email, officenumber);
       
         // Assert
         expect(checkManager.getRole()).toEqual(role);
@@ -71,12 +71,12 @@ describe('Manager', () => {
             const id = '2'
             const email = 'john@email.com'
             const role = 'Manager'
-            const officeNumber = 'officenumber'
+            const officenumber = 'officenumber'
       
         // Act
-        const checkManager = new Manager(name, id, email, officeNumber);
+        const checkManager = new Manager(name, id, email, officenumber);
       
         // Assert
-        expect(checkManager.officeNumber).toEqual(officeNumber);
+        expect(checkManager.officenumber).toEqual(officenumber);
           });    
       });

@@ -1,16 +1,14 @@
-const Intern = require("../lib/Intern");
-
 
 module.exports = {
 
-    generateManager ({ name, id, email, officeNumber }){
+    generateManager ({ name, id, email, officenumber }){
         return `<div class="card">
-         <h2>${manager.getName()}</h2>
-         <h3>${manger.getRole()}</h3>
+         <h2>${name}</h2>
+         <h3>Manager</h3>
          <ul>
-             <li>ID: ${manager.getID()}</li>
-             <li><a href="mailto: ${manager.getEmail()}">${manager.getEmail()}</a></li>
-             <li>office number:${manager.getNumber()}</li>
+             <li>ID: ${id}</li>
+             <li><a href="mailto: ${email}">${email}</a></li>
+             <li>office number:${officenumber}</li>
        
          </ul>
        </div>`
@@ -18,12 +16,12 @@ module.exports = {
        
     generateEngineer ({ name, id, email, username }){
         return `<div class="card">
-         <h2>${engineer.getName()}</h2>
-         <h3>${engineer.getRole()}</h3>
+         <h2>${name}</h2>
+         <h3>Engineer</h3>
          <ul>
-             <li>ID: ${engineer.getID()}</li>
-             <li><a href="mailto: ${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-             <li><a href="http://${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+             <li>ID: ${id}</li>
+             <li><a href="mailto: ${email}">${email}</a></li>
+             <li><a href="http://github.com/${username}">${username}</a></li>
        
          </ul>
        </div>`
@@ -31,12 +29,12 @@ module.exports = {
        
      generateIntern ({ name, id, email, school }){
         return `<div class="card">
-         <h2>${Intern.getName()}</h2>
-         <h3>${Intern.getRole()}</h3>
+         <h2>${name}</h2>
+         <h3>Intern</h3>
          <ul>
-             <li>ID: ${Intern.getID()}</li>
-             <li><a href="mailto: ${Intern.getEmail()}">${Intern.getEmail()}</a></li>
-             <li>School: ${Intern.getSchool()}</li>
+             <li>ID: ${id}</li>
+             <li><a href="mailto: ${email}">${email}</a></li>
+             <li>School: ${school}</li>
        
          </ul>
        </div>`

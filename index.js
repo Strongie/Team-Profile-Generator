@@ -6,7 +6,7 @@ const Intern = require("./lib/Intern.js");
 const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
 const Card = require("./dist/Card.js");
-  // import {generateIntern} from "./dist/card.js";
+
 
 function newTeam(){
     inquirer.prompt([
@@ -53,15 +53,22 @@ function manager(){
       message: "What is the manager's email address?",
       name: 'email',
     },
+    {
+      type: 'input',
+      message: "What is the manager's office number?",
+      name: 'officenumber',
+    },
   ])
-  .then((data) => {
-       const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+  .then((answers) => {
+    const managerHTML = Card.generateManager(answers);
 
-      fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-        err ? console.log(err) : console.log('Success!')
-      );
-      newTeam();
-    });
+    fs.writeFile('index.html', managerHTML, (err) =>
+      err ? console.log(err) :
+     console.log('Successfully created index.html!')
+    );
+    newTeam();
+
+  });
     
 
 }
@@ -87,16 +94,18 @@ function manager(){
       {
         type: 'input',
         message: "What is the engineer's github username?",
-        name: 'github',
+        name: 'username',
       },
     ])
-    .then((data) => {
-      const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+    .then((answers) => {
+      const engineerHTML = Card.generateEngineer(answers);
   
-      fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-        err ? console.log(err) : console.log('Success!')
+      fs.writeFile('index.html', engineerHTML, (err) =>
+        err ? console.log(err) :
+       console.log('Successfully created index.html!')
       );
       newTeam();
+
     });
     
 
@@ -126,9 +135,9 @@ function manager(){
       },
     ])
     .then((answers) => {
-      const htmlPageContent = Card.generateIntern(answers);
+      const internHTML = Card.generateIntern(answers);
   
-      fs.writeFile('index.html', htmlPageContent, (err) =>
+      fs.writeFile('index.html', internHTML, (err) =>
         err ? console.log(err) :
        console.log('Successfully created index.html!')
       );

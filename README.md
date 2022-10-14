@@ -11,6 +11,7 @@ The objective for this project was to build a Node.js command-line application t
 - [Screenshot](#screenshot)
 - [Walkthrough Video](#walkthrough-video)
 - [Credits](#credits)
+- [Links](#links)
 - [License](#license)
 
 ## User Story

@@ -5,7 +5,7 @@ const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
 const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
-const Card = require("./dist/card.js");
+const Card = require("./dist/Card.js");
   // import {generateIntern} from "./dist/card.js";
 
 function newTeam(){
@@ -126,10 +126,11 @@ function manager(){
       },
     ])
     .then((answers) => {
-      const htmlPageContent = generateIntern(answers);
+      const htmlPageContent = Card.generateIntern(answers);
   
       fs.writeFile('index.html', htmlPageContent, (err) =>
-        err ? console.log(err) : console.log('Successfully created index.html!')
+        err ? console.log(err) :
+       console.log('Successfully created index.html!')
       );
       newTeam();
 

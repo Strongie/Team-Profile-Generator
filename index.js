@@ -5,7 +5,8 @@ const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
 const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
-const card = require("./dist/card.js");
+const Card = require("./dist/card.js");
+  // import {generateIntern} from "./dist/card.js";
 
 function newTeam(){
     inquirer.prompt([

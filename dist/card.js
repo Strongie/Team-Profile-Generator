@@ -37,3 +37,6 @@ function generateIntern ({ name, id, email, school }){
   </ul>
 </div>`
 };
+
+// export {generateIntern};
+module.export = card

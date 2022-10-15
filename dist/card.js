@@ -2,8 +2,7 @@
 module.exports = {
 
     generateManager ({ name, id, email, officenumber }){
-        return `<div class="card">
-         <h2>${name}</h2>
+        return `<h2>${name}</h2>
          <h3>Manager</h3>
          <ul>
              <li>ID: ${id}</li>
@@ -11,12 +10,11 @@ module.exports = {
              <li>office number:${officenumber}</li>
        
          </ul>
-       </div>`
+       `
        },
        
     generateEngineer ({ name, id, email, username }){
-        return `<div class="card">
-         <h2>${name}</h2>
+        return `<h2>${name}</h2>
          <h3>Engineer</h3>
          <ul>
              <li>ID: ${id}</li>
@@ -24,12 +22,11 @@ module.exports = {
              <li><a href="http://github.com/${username}">${username}</a></li>
        
          </ul>
-       </div>`
+       `
        },
        
      generateIntern ({ name, id, email, school }){
-        return `<div class="card">
-         <h2>${name}</h2>
+        return `<h2>${name}</h2>
          <h3>Intern</h3>
          <ul>
              <li>ID: ${id}</li>
@@ -37,7 +34,7 @@ module.exports = {
              <li>School: ${school}</li>
        
          </ul>
-       </div>`
+       `
        }
 
 };

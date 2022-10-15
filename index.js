@@ -7,6 +7,12 @@ const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
 const Card = require("./dist/Card.js");
 
+team = [];
+
+function init(){
+  
+
+
 
 function newTeam(){
     inquirer.prompt([
@@ -62,9 +68,9 @@ function manager(){
   .then((answers) => {
     const managerHTML = Card.generateManager(answers);
 
-    fs.writeFile('index.html', managerHTML, (err) =>
+    fs.writeFile("manager.html", managerHTML, (err) =>
       err ? console.log(err) :
-     console.log('Successfully created index.html!')
+     console.log('Successfully created manager.html!')
     );
     newTeam();
 
@@ -100,12 +106,13 @@ function manager(){
     .then((answers) => {
       const engineerHTML = Card.generateEngineer(answers);
   
-      fs.writeFile('index.html', engineerHTML, (err) =>
+      fs.writeFile('engineer.html', engineerHTML, (err) =>
         err ? console.log(err) :
-       console.log('Successfully created index.html!')
+       console.log('Successfully created engineer.html!')
       );
       newTeam();
 
+      
     });
     
 
@@ -131,59 +138,36 @@ function manager(){
       {
         type: 'input',
         message: "What is the intern's school?",
-        name: 'school',
+        name: 'internschool',
       },
     ])
     .then((answers) => {
-      const internHTML = Card.generateIntern(answers);
-  
-      fs.writeFile('index.html', internHTML, (err) =>
-        err ? console.log(err) :
-       console.log('Successfully created index.html!')
-      );
+      // const internHTML = Card.generateIntern(answers);
+      const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+      team.push(intern);
+      // fs.writeFile('intern.html', internHTML, (err) =>
+      //   err ? console.log(err) :
+       console.log('Successfully created intern.html!')
+      // );
+      
       newTeam();
 
     });
     
     }
 
-
-//   function generateHTML(data){
-//     return `<!DOCTYPE html>
-//     <html lang="en">
-//     <head>
-//         <meta charset="UTF-8">
-//         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//         <title>Document</title>
-//     </head>
-//     <body>
-    
-//         <div>
-//             <ul>
-//                 <li>${data.name}</li>
-//                 <li>${data.home}</li>
-//                 <li>${data.hobby}</li>
-//                 <li>${data.food}</li>
-//                 <li>${data.githubname}</li>
-//                 <li>${data.url}</li>
-//             </ul>
-           
-//         </div>
-    
-    
-        
-//     </body>
-//     </html>
-// `
-  // };
-
-  const init = () => {
-    newTeam()
       
-      // .then((answers) => writeFile('index.html', generateHTML(answers)))
-      // .then(() => console.log('Successfully wrote to index.html'))
-      // .catch((err) => console.error(err));
-  };
+  // const init = () => {
+  //   newTeam()
+      
+  //   // .then((answers) => writeFile('index.html', generateHTML(answers)))
+  //     // .then(() => console.log('Successfully wrote to index.html'))
+  //     // .catch((err) => console.error(err));
+  // };
   
+  newTeam()
+};
+
+
   init();
+  

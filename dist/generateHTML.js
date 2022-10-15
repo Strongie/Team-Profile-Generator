@@ -1,70 +1,60 @@
-// function includeHTML() {
-//     var z, i, elmnt, file, xhttp;
-//     /*loop through a collection of all HTML elements:*/
-//     z = document.getElementsByTagName("*");
-//     for (i = 0; i < z.length; i++) {
-//       elmnt = z[i];
-//       /*search for elements with a certain atrribute:*/
-//       file = elmnt.getAttribute("w3-include-html");
-//       if (file) {
-//         /*make an HTTP request using the attribute value as the file name:*/
-//         xhttp = new XMLHttpRequest();
-//         xhttp.onreadystatechange = function() {
-//           if (this.readyState == 4) {
-//             if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-//             if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-//             /*remove the attribute, and call this function once more:*/
-//             elmnt.removeAttribute("w3-include-html");
-//             includeHTML();
-//           }
-//         }      
-//         xhttp.open("GET", file, true);
-//         xhttp.send();
-//         /*exit the function:*/
-//         return;
-//       }
-//     }
-//   };
-
-// includeHTML();
+const generateHTML = team => {
 
 
-//  $(function(){
-//  $("#engineer").load("manager.html"); 
-//  });
-// const Employee = require("../lib/Employee.js");
-// const Manager = require("../lib/Manager.js");
-// // const index = require("index.js");
+const generateManager = manager => {
+
+    return `
+    
+    <div class="card">
+    <h2>${manager.getname()}</h2>
+    <h3>${manager.getRole()}</h3>
+    <ul>
+        <li>ID: ${manager.getId}</li>
+        <li><a href="mailto: ${manager.getEmail()}">Email: ${manager.getEmail()}</a></li>
+        <li>Office Number: ${manager.getNumber()}</li>
+
+    </ul>
+  </div>
+    `
+};
+
+const generateEngineer = engineer => {
+
+    return `
+    <div class="card">
+            <h2>${engineer.getName()}</h2>
+            <h3>${engineer.getRole()}</h3>
+            <ul>
+                <li>ID:${engineer.getId()}</li>
+                <li><a href="mailto: ${engineer.getEmail()}">Email: ${engineer.getEmail()}</a></li>
+                <li><a href="http://github.com/${engineer.getGithub()}">Username: ${engineer.getGithub()}</a></li>
+
+            </ul>
+          </div>
+       
+    `
+};
+
+const generateIntern = intern => {
+
+    return `
+    <div class="card">
+                <h2>${intern.getname()}</h2>
+                <h3>${intern.getRole()}</h3>
+                <ul>
+                    <li>ID: ${intern.getId()}</li>
+                    <li><a href="mailto: ${intern.getEmail()}">Email: ${intern.getEmail()}</a></li>
+                    <li>School: ${intern.getSchool()}</li>    
+                </ul>
+              </div>
+        `
+};
 
 
-// function generateHTML(){
-//     if (data.choices == "Manager")
-//     fetch("manager.html")
-//     .then(response => {
-//       return response.text()
-//     })
-//     .then(data => {
-//       document.querySelector("id1").innerHTML = data;
-//     });
-  
-//     if (Employee.choices == "Engineer")
-//     fetch("/engineer.html")
-//     .then(response => {
-//       return response.text()
-//     })
-//     .then(data => {
-//       document.querySelector("id2").innerHTML = data;
-//     });
 
-//     if (Employee.choices == "Intern")
-//     fetch("/intern.html")
-//     .then(response => {
-//       return response.text()
-//     })
-//     .then(data => {
-//       document.querySelector("id1").innerHTML = data;
-//     });
 
-// }
 
-// //  generateHTML();
+
+
+
+}

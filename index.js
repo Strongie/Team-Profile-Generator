@@ -6,6 +6,7 @@ const Intern = require("./lib/Intern.js");
 const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
 const Card = require("./dist/Card.js");
+const generateHTML = require("./dist/generateHTML.js");
 
 team = [];
 
@@ -35,6 +36,7 @@ function newTeam(){
         intern()
       break;
       default:
+        renderHTML()
         console.log("Team Complete");
 
     }
@@ -66,12 +68,10 @@ function manager(){
     },
   ])
   .then((answers) => {
-    const managerHTML = Card.generateManager(answers);
-
-    fs.writeFile("manager.html", managerHTML, (err) =>
-      err ? console.log(err) :
-     console.log('Successfully created manager.html!')
-    );
+    
+    const manager = new Manager(answers.name, answers.id, answers.email, answers.school);
+    team.push(manager);
+    
     newTeam();
 
   });
@@ -104,19 +104,15 @@ function manager(){
       },
     ])
     .then((answers) => {
-      const engineerHTML = Card.generateEngineer(answers);
-  
-      fs.writeFile('engineer.html', engineerHTML, (err) =>
-        err ? console.log(err) :
-       console.log('Successfully created engineer.html!')
-      );
+      
+      const engineer = new Engineer(answers.name, answers.id, answers.email, answers.school);
+      team.push(engineer);
+      
       newTeam();
 
       
     });
-    
-
-  }
+    }
   function intern(){
     inquirer.prompt([
       {
@@ -142,32 +138,31 @@ function manager(){
       },
     ])
     .then((answers) => {
-      // const internHTML = Card.generateIntern(answers);
+      
       const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
       team.push(intern);
-      // fs.writeFile('intern.html', internHTML, (err) =>
-      //   err ? console.log(err) :
+      
        console.log('Successfully created intern.html!')
-      // );
+     
       
       newTeam();
 
     });
-    
+    };
+
+    function renderHTML(){
+     
+     
+    fs.writeFile(index.html, generateHTML(team), "UTF-8");
+    console.log("Team succesfully completed!");
+
+
     }
 
-      
-  // const init = () => {
-  //   newTeam()
-      
-  //   // .then((answers) => writeFile('index.html', generateHTML(answers)))
-  //     // .then(() => console.log('Successfully wrote to index.html'))
-  //     // .catch((err) => console.error(err));
-  // };
-  
-  newTeam()
+
+    newTeam();
 };
 
-
+  
   init();
   

@@ -58,7 +58,7 @@ output.push(team
 
 
 
-)
+);
 
 output.push(team
     .filter(employee => employee.getRole() == "Engineer")
@@ -66,15 +66,17 @@ output.push(team
 
 
 
-)
+);
 
 output.push(team
     .filter(employee => employee.getRole() == "Intern")
     .map (engineer =>generateIntern(engineer)) 
 
-)
+);
 
 return output;
+
+};
 
 module.exports = team => {
     return `
@@ -96,75 +98,18 @@ module.exports = team => {
     
     <div class="container">
         <div class="row">
-          <div class="card">
-            <h2>Nick Strong</h2>
-            <h3>Manager</h3>
-            <ul>
-                <li>ID: 1</li>
-                <li><a href="mailto: strongie@gamil.com">strongie@gmail.com</a></li>
-                <li>office number: 1</li>
-
-            </ul>
-          </div>
-          <div class="card">
-            <h2>Joe Blogs</h2>
-            <h3>Engineer</h3>
-            <ul>
-                <li>ID: 2</li>
-                <li><a href="mailto: joe.blogs@gamil.com">joe.blogs@gmail.com</a></li>
-                <li><a href="http://github.com/Blogshub">github</a></li>
-
-            </ul>
+          <div>
+            ${generateHTML(team)}
           </div>
         </div>
-        <div class ="row">
-            <div class="card">
-                <h2>James Blogs</h2>
-                <h3>Engineer</h3>
-                <ul>
-                    <li>ID: 3</li>
-                    <li><a href="mailto: james.blogs@gamil.com">james.blogs@gmail.com</a></li>
-                    <li><a href="http://github.com/JamesBlogshub">github</a></li>
-    
-                </ul>
-            </div>
-            <div class="card">
-                <h2>Chris Blogs</h2>
-                <h3>Engineer</h3>
-                <ul>
-                    <li>ID: 4</li>
-                    <li><a href="mailto: james.blogs@gamil.com">james.blogs@gmail.com</a></li>
-                    <li><a href="http://github.com/JamesBlogshub">github</a></li>
-    
-                </ul>
-            </div>
-            <div class="card">
-                <h2>Bob Still</h2>
-                <h3>Intern</h3>
-                <ul>
-                    <li>ID: 5</li>
-                    <li><a href="mailto: james.blogs@gamil.com">james.blogs@gmail.com</a></li>
-                    <li>School: Sydney University</li>    
-                </ul>
-              </div>
-        </div>
-      </div>
+    </div>
 
 
       <script src="./index.js"></script> 
 </body>
 </html>
     
-    
-    
-    
-    
-    
-    `
-
-
-
+`
 }
 
 
-}

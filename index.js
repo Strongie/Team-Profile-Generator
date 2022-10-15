@@ -153,7 +153,7 @@ function manager(){
     function renderHTML(){
      
      
-    fs.writeFile(index.html, generateHTML(team), "UTF-8");
+    fs.writeFile("index.html", generateHTML(team));
     console.log("Team succesfully completed!");
 
 

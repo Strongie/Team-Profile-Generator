@@ -6,12 +6,12 @@ const generateManager = manager => {
     return `
     
     <div class="card">
-    <h2>${manager.getname()}</h2>
-    <h3>${manager.getRole()}</h3>
+    <h2>${manager.name}</h2>
+    <h3>Manager</h3>
     <ul>
-        <li>ID: ${manager.getId}</li>
-        <li><a href="mailto: ${manager.getEmail()}">Email: ${manager.getEmail()}</a></li>
-        <li>Office Number: ${manager.getNumber()}</li>
+        <li>ID: ${manager.id}</li>
+        <li><a href="mailto: ${manager.email}">Email: ${manager.email}</a></li>
+        <li>Office Number: ${manager.officeNumber}</li>
 
     </ul>
   </div>
@@ -22,12 +22,12 @@ const generateEngineer = engineer => {
 
     return `
     <div class="card">
-            <h2>${engineer.getName()}</h2>
-            <h3>${engineer.getRole()}</h3>
+            <h2>${engineer.name}</h2>
+            <h3>Engineer</h3>
             <ul>
-                <li>ID:${engineer.getId()}</li>
-                <li><a href="mailto: ${engineer.getEmail()}">Email: ${engineer.getEmail()}</a></li>
-                <li><a href="http://github.com/${engineer.getGithub()}">Username: ${engineer.getGithub()}</a></li>
+                <li>ID:${engineer.Id}</li>
+                <li><a href="mailto: ${engineer.email}">Email: ${engineer.email}</a></li>
+                <li><a href="http://github.com/${engineer.username}">Username: ${engineer.username}</a></li>
 
             </ul>
           </div>
@@ -39,12 +39,12 @@ const generateIntern = intern => {
 
     return `
     <div class="card">
-                <h2>${intern.getname()}</h2>
-                <h3>${intern.getRole()}</h3>
+                <h2>${intern.name}</h2>
+                <h3>Intern</h3>
                 <ul>
-                    <li>ID: ${intern.getId()}</li>
-                    <li><a href="mailto: ${intern.getEmail()}">Email: ${intern.getEmail()}</a></li>
-                    <li>School: ${intern.getSchool()}</li>    
+                    <li>ID: ${intern.Id}</li>
+                    <li><a href="mailto: ${intern.email}">Email: ${intern.email}</a></li>
+                    <li>School: ${intern.school}</li>    
                 </ul>
               </div>
         `
@@ -55,7 +55,7 @@ const output =[];
 output.push(team
     .filter(employee => employee.getRole() == "Manager")
     .map (manager=>generateManager(manager)) 
-
+    .join("")
 
 
 );
@@ -63,7 +63,7 @@ output.push(team
 output.push(team
     .filter(employee => employee.getRole() == "Engineer")
     .map (engineer=>generateEngineer(engineer)) 
-
+    .join("")
 
 
 );
@@ -71,10 +71,10 @@ output.push(team
 output.push(team
     .filter(employee => employee.getRole() == "Intern")
     .map (engineer =>generateIntern(engineer)) 
-
+    .join("")
 );
 
-return output;
+return output.join("");
 
 };
 

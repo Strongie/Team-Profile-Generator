@@ -40,5 +40,5 @@
 // };
 
 
-// // export {generateIntern};
-// // module.exports = generateIntern;
+// export {generateIntern};
+// module.exports = generateIntern;

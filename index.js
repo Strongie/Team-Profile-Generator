@@ -7,8 +7,6 @@ const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
 const path = require("path");
 const generateHTML = require("./generateHTML.js");
-// const x = path.join(__dirname, "index.html"); 
-// 
 const distPath = ("./dist/index.html");
 
 
@@ -110,7 +108,7 @@ function manager(){
     ])
     .then((answers) => {
       
-      const engineer = new Engineer(answers.name, answers.id, answers.email, answers.school);
+      const engineer = new Engineer(answers.name, answers.id, answers.email, answers.username);
       team.push(engineer);
       
       newTeam();
@@ -139,7 +137,7 @@ function manager(){
       {
         type: 'input',
         message: "What is the intern's school?",
-        name: 'internschool',
+        name: 'school',
       },
     ])
     .then((answers) => {
@@ -156,7 +154,7 @@ function manager(){
     };
 
     function renderHTML(){
-    fs.writeFile(distPath, generateHTML(team),"UTF-8");
+    fs.writeFileSync(distPath, generateHTML(team),"UTF-8");
     console.log("Team succesfully completed!");
 
 

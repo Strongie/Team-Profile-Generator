@@ -7,8 +7,9 @@ const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
 const path = require("path");
 const generateHTML = require("./generateHTML.js");
-const x = path.join(__dirname, "index.html"); 
-// const distPath = path.resolve
+// const x = path.join(__dirname, "index.html"); 
+// 
+const distPath = ("./dist/index.html");
 
 
 
@@ -155,7 +156,7 @@ function manager(){
     };
 
     function renderHTML(){
-    fs.writeFile(x, generateHTML(team),"UTF-8");
+    fs.writeFile(distPath, generateHTML(team),"UTF-8");
     console.log("Team succesfully completed!");
 
 

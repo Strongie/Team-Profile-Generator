@@ -14,7 +14,7 @@ describe('Manager', () => {
     const checkManager = new Manager(name, id, email, officenumber);
   
     // Assert
-    expect(checkManager.getName()).toEqual(name);
+    expect(checkManager.name).toEqual(name);
       });
   
      
@@ -30,7 +30,7 @@ describe('Manager', () => {
     const checkManager = new Manager(name, id, email, officenumber);
   
     // Assert
-    expect(checkManager.getID()).toEqual(id);
+    expect(checkManager.id).toEqual(id);
       });
 
     it("should return the manager email when requested", () => {
@@ -46,26 +46,11 @@ describe('Manager', () => {
         const checkManager = new Manager(name, id, email, officenumber);
       
         // Assert
-        expect(checkManager.getEmail()).toEqual(email);
+        expect(checkManager.email).toEqual(email);
           });
       
          
-        it("should provide the manager role when requested ", () => {
-            // Arrange
-            const name = 'John';
-            const id = '2'
-            const email = 'john@email.com'
-            const role = 'Manager'
-            const officenumber = 'officenumber'
-      
-        // Act
-        const checkManager = new Manager(name, id, email, officenumber);
-      
-        // Assert
-        expect(checkManager.getRole()).toEqual(role);
-          });
-          
-          it("should provide the manager office number when requested ", () => {
+      it("should provide the manager office number when requested ", () => {
             // Arrange
             const name = 'John';
             const id = '2'

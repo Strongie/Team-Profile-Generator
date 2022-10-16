@@ -28,7 +28,7 @@ describe('Employee', () => {
         const checkEmployee = new Employee(name, id, email);
       
         // Assert
-        expect(checkEmployee.getID()).toEqual(id);
+        expect(checkEmployee.id).toEqual(id);
           });
 
         it("should return the employee email when requested", () => {
@@ -43,23 +43,10 @@ describe('Employee', () => {
             const checkEmployee = new Employee(name, id, email);
           
             // Assert
-            expect(checkEmployee.getEmail()).toEqual(email);
+            expect(checkEmployee.email).toEqual(email);
               });
           
-             
-            it("should provide the employee role when requested ", () => {
-                // Arrange
-            const name = 'John';
-            const id = '2'
-            const email = 'john@email.com'
-            const role = 'Manager'
-          
-            // Act
-            const checkEmployee = new Employee(name, id, email);
-          
-            // Assert
-            expect(checkEmployee.getRole()).toEqual(role);
-              });  
+                        
           });
      
       

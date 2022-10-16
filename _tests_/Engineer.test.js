@@ -14,7 +14,7 @@ describe('Engineer', () => {
     const checkEngineer = new Engineer(name, id, email, github);
   
     // Assert
-    expect(checkEngineer.getName()).toEqual(name);
+    expect(checkEngineer.name).toEqual(name);
       });
   
      
@@ -30,7 +30,7 @@ describe('Engineer', () => {
     const checkEngineer = new Engineer(name, id, email, github);
   
     // Assert
-    expect(checkEngineer.getID()).toEqual(id);
+    expect(checkEngineer.id).toEqual(id);
       });
 
     it("should return the engineer email when requested", () => {
@@ -45,25 +45,11 @@ describe('Engineer', () => {
         const checkEngineer = new Engineer(name, id, email, github);
       
         // Assert
-        expect(checkEngineer.getEmail()).toEqual(email);
+        expect(checkEngineer.email).toEqual(email);
           });
       
          
-        it("should provide the engineer role when requested ", () => {
-            // Arrange
-            const name = 'John';
-            const id = '2'
-            const email = 'john@email.com'
-            const role = 'Manager'
-            const github = 'strongie'
-      
-        // Act
-        const checkEngineer = new Engineer(name, id, email, github);
-      
-        // Assert
-        expect(checkEngineer.getRole()).toEqual(role);
-          }); 
-          
+  
           it("should provide the email", () => {
             // Arrange
             const name = 'John';
@@ -76,7 +62,7 @@ describe('Engineer', () => {
         const checkEngineer = new Engineer(name, id, email, github);
       
         // Assert
-        expect(checkEngineer.getEmail()).toEqual(email);
+        expect(checkEngineer.email).toEqual(email);
           });      
        
        it("should provide the github username", () => {
@@ -91,7 +77,7 @@ describe('Engineer', () => {
         const checkEngineer = new Engineer(name, id, email, github);
       
         // Assert
-        expect(ccheckEngineer.getGithub()).toEqual(github);
+        expect(checkEngineer.getGithub()).toEqual(github);
           });
 
 

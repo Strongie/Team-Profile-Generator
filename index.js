@@ -5,8 +5,12 @@ const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
 const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
-const Card = require("./dist/Card.js");
-const generateHTML = require("./dist/generateHTML.js");
+const path = require("path");
+const generateHTML = require("./generateHTML.js");
+const x = path.join(__dirname, "index.html"); 
+// const distPath = path.resolve
+
+
 
 team = [];
 
@@ -151,9 +155,7 @@ function manager(){
     };
 
     function renderHTML(){
-     
-     
-    fs.writeFile("index.html", generateHTML(team));
+    fs.writeFile(x, generateHTML(team),"UTF-8");
     console.log("Team succesfully completed!");
 
 

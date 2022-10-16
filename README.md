@@ -42,11 +42,15 @@ THEN I exit the application, and the HTML is generated
 
 ## Screen Shot
 
+image.png
 
 ## Video Walkthrough
 
+Link: https://drive.google.com/file/d/1nY-4iwJ3FOZs2CcYSmx5Ugn8ARz757qH/view
 
 ## Credits
+
+ASKBCS Learning Assistants for helping with my queries
 
 ## Links
 

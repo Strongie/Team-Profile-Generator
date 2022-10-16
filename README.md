@@ -42,7 +42,7 @@ THEN I exit the application, and the HTML is generated
 
 ## Screen Shot
 
-image.png
+![image](https://user-images.githubusercontent.com/109957674/196017402-dea9a314-5afb-438f-96a1-e4ad8345f702.png)
 
 ## Video Walkthrough
 
